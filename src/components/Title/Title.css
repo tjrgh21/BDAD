@@ -1,0 +1,37 @@
+.top-nav-container{
+    background-color: #fff;
+    border-bottom: 1.5px solid #ebebeb;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 2px 4px 12px #00000014;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.top-nav-wrap{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+    justify-content: space-between;
+    padding: .5rem;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.top-nav-container .title-name{
+    align-items: center;
+    display: flex;
+    font-size: 1.3rem;
+    gap: .6rem;
+    justify-content: center;
+}
+
+.title-name img {
+    padding-top: .3rem;
+    width: 50%;
+}
+
+.top-nav-button i{
+    font-size: 1.5rem;
+}

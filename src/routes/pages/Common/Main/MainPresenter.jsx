@@ -1,4 +1,7 @@
 import React from "react";
+import { ListPresenter } from "../components/List/ListPresenter";
+import { Layout } from "../../../../components/Layout/Layout";
+
 /*
     아래 import는 컴포넌트를 불러오는 코드
     아래와 같이 불러오는 이유는 BackConnectTest.jsx에서 export const를 했기 때문이다.
@@ -12,6 +15,7 @@ import { DBConnectTest } from "./components/DBConnectTest";
     css는 따로 css파일을 만들어 사용하는게 관리하기가 편하다.
 */
 import './Main.css';
+import { BannerBox } from "../../../../components/BannerBox/BannerBox";
 
 /* 
     하나의 페이지를 Container와 Presenter로 분리하고 각 역할은 아래와 같다
@@ -21,7 +25,7 @@ import './Main.css';
 */
 /*
     ※ 컴포넌트 이름(함수 이름)은 무조건 대문자로 시작해야 함!! ※
-      만약 소문자로 시작한다면 컴포넌트를 출력할 수 없으므로 반드시 주의해서 작성할 것
+    만약 소문자로 시작한다면 컴포넌트를 출력할 수 없으므로 반드시 주의해서 작성할 것
 */
 const MainPresenter = ({
     text,
@@ -33,6 +37,8 @@ const MainPresenter = ({
 
     SignIn,
     isSignIn,
+
+    userDatas
 }) => {
     /*
         Presenter에서는 단순히 받아온 데이터를 어떻게 보여줄 것인지만 표현한다.
@@ -78,13 +84,13 @@ const MainPresenter = ({
         <div className="main-container">
             {/* 컴포넌트 */}
             {/* 아래는 props를 전달받아 띄워주는 형식이므로 여는 태그, 닫는 태그의 구분이 필요없음 */}
-            <BackConnectTest
+            {/* <BackConnectTest
                 buttonClick={buttonClick}
                 text={text}
-            />
+            /> */}
 
             {/* 아래는 children을 전달받아 띄워주는 형식이므로 여는 태그, 닫는 태그의 구분이 필요함 */}
-            <DBConnectTest>
+            {/* <DBConnectTest>
                 <div>
                     <button onClick={SignUp}>회원가입</button>
                     <div>회원가입: {isSignUp}</div>
@@ -94,7 +100,19 @@ const MainPresenter = ({
                     <button onClick={SignIn}>로그인</button>
                     <div>로그인: {isSignIn ? '로그인 성공' : '로그인 실패'}</div>
                 </div>
-            </DBConnectTest>
+            </DBConnectTest> */}
+            
+            
+            <Layout
+                title_name = {<img src="jooyajooya.png"/>}
+                type = {"메인"}
+                main_contents = {
+                    <ListPresenter
+                    userDatas={userDatas}
+                    />
+                }
+            />
+                
         </div>
     )
 }

@@ -5,3 +5,5 @@
 */
 
 export { default as Main } from './Common/Main';
+export { default as Signup } from './Common/Signup';
+export { default as Signin } from './Common/Signin';
